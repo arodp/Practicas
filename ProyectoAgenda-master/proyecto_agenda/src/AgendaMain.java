@@ -6,6 +6,7 @@ import View.Menu;
 
 public class AgendaMain {
 
+    static int id_incremento = 11;
 
     public static void main(String[] args) {
         int decision;
@@ -13,6 +14,7 @@ public class AgendaMain {
         String apellido;
         String telefono;
         int id;
+
 
         Agenda agendaTelefonica = new Agenda();
         Contacto c;
@@ -56,8 +58,9 @@ public class AgendaMain {
                     apellido = scanner.entrada().nextLine();
                     System.out.printf("Telefono: ");
                     telefono = scanner.entrada().nextLine();
-                    System.out.printf("ID: ");
-                    id = scanner.entrada().nextInt();
+
+                    id = id_incremento;
+                    id_incremento++;
 
                     c = new Contacto(name, apellido, telefono, id);
                     agendaTelefonica.addContacto(c);
@@ -89,7 +92,7 @@ public class AgendaMain {
                 id = scanner.entrada().nextInt();
 
                 c = new Contacto(id);
-                agendaTelefonica.eliminarContacto(c);
+                agendaTelefonica.eliminarContacto(id);
 
             }
 

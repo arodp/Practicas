@@ -38,6 +38,7 @@ public class Agenda {
 
     }
 
+
     public void precargaContactos(){
         Contacto c1 = new Contacto("BRANDOLF", "MUNOZ", "8295642575", 1);
         Contacto c2 = new Contacto("ALAN", "RODRIGUEZ", "8099956076", 2);
@@ -64,13 +65,12 @@ public class Agenda {
 
     public void listarContactos(){
 
-        boolean encontrado = false;
-        for (int i = 0; i < contactos.length && !encontrado; i++) {
+        for (int i = 0; i < contactos.length; i++) {
             if(contactos[i] != null){
                 System.out.println(contactos[i]);
             }else {
-                System.out.println("No hay mas contactos.");
-                encontrado = true;
+                /*System.out.println("No hay mas contactos.");
+                encontrado = true;*/
             }
         }
 
@@ -109,11 +109,11 @@ public class Agenda {
         }
     }
 
-    public void eliminarContacto(Contacto c){
+    public void eliminarContacto(int id){
 
         boolean encontrado = false;
         for (int i = 0; i < contactos.length && !encontrado; i++) {
-            if(contactos[i] != null && contactos[i].getId() == c.getId()){
+            if(contactos[i] != null && contactos[i].getId() == id){
                 contactos[i] = null;
                 encontrado = true;
             }
@@ -142,6 +142,8 @@ public class Agenda {
             System.out.println("No se ha podido actializar el contacto");
         }
     }
+
+
 
     /**
      * Indica si la agenda esta llena o no
