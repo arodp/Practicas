@@ -1,6 +1,5 @@
 import Model.Agenda;
 import Model.Contacto;
-import Model.Precarga_Datos;
 import Utils.scanner;
 import View.Menu;
 
